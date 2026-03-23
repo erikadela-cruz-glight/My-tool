@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Scheduling Prompts</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f4f7f6; padding: 20px; color: #333; }
+        .container { max-width: 800px; margin: auto; }
+        .category { margin-top: 25px; font-weight: bold; color: #444; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        .row { 
+            display: flex; align-items: center; justify-content: space-between;
+            background: white; padding: 12px; margin-top: 10px;
+            border-radius: 6px; border: 1px solid #e0e0e0; box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .text { flex-grow: 1; margin-right: 15px; font-size: 14px; line-height: 1.4; }
+        .copy-btn { 
+            background-color: #007bff; color: white; border: none; 
+            padding: 10px 18px; border-radius: 4px; cursor: pointer; font-weight: bold; min-width: 80px;
+        }
+        .copy-btn:active { background-color: #0056b3; }
+        .copy-btn.copied { background-color: #28a745; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>My Quick Copy Tool</h1>
+    
+    <div class="category">📍 Locations</div>
+    <div class="row">
+        <div class="text">Main Office: 123 Health Way, Suite 100, Chicago, IL 60601</div>
+        <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+
+    <div class="category">💬 Outreach</div>
+    <div class="row">
+        <div class="text">Good morning, just wanted to follow up on scheduling your appointment!</div>
+        <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+</div>
+
+<script>
+    function copyText(btn) {
+        const text = btn.previousElementSibling.innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            const originalText = btn.innerText;
+            btn.innerText = "Copied!";
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.classList.remove('copied');
+            }, 1500);
+        });
+    }
+</script>
+
+</body>
+</html>
