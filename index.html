@@ -1,26 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic Scheduling Tool</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #f4f7f6; padding: 20px; color: #333; }
+        .container { max-width: 800px; margin: auto; }
+        .category { margin-top: 25px; font-weight: bold; color: #0056b3; border-bottom: 2px solid #ddd; padding-bottom: 5px; text-transform: uppercase; font-size: 0.9rem; }
+        .row { 
+            display: flex; align-items: center; justify-content: space-between;
+            background: white; padding: 12px; margin-top: 10px;
+            border-radius: 8px; border: 1px solid #e0e0e0; box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .text { flex-grow: 1; margin-right: 15px; font-size: 14px; line-height: 1.4; }
+        .copy-btn { 
+            background-color: #007bff; color: white; border: none; 
+            padding: 10px 18px; border-radius: 5px; cursor: pointer; font-weight: bold; min-width: 85px;
+        }
+        .copy-btn:active { background-color: #004494; }
+        .copy-btn.copied { background-color: #28a745; }
+    </style>
+</head>
+<body>
 
-<div class="section">
-    <h3>📞 PLANO 15</h3>
-    <div class="copy-box">
-        <span>972-985-8838</span>
-        <button class="copy-btn" onclick="copyText('972-985-8838')">Copy</button>
+<div class="container">
+    <h1>Quick Copy Tool</h1>
+
+    <div class="category">📍 Clinic Locations</div>
+    <div class="row">
+        <div class="text">3801 West 15th Street, Building B, Suite 320, Plano, TX 75075</div>
+        <button class="copy-btn" onclick="copyText(this)">Copy</button>
     </div>
-    <div class="copy-box">
-        <span>3801 West 15th Street, Building B, Suite 320, Plano, TX 75075</span>
-        <button class="copy-btn" onclick="copyText('3801 West 15th Street, Building B, Suite 320, Plano, TX 75075')">Copy</button>
+    <div class="row">
+        <div class="text">6124 West Parker Road, Building 3, Suite 536, Plano, TX 75093</div>
+        <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+
+    <div class="category">📞 Plano 15</div>
+    <div class="row">
+        <div class="text">972-985-8838</div>
+        <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+
+    <div class="category">📞 Plano West</div>
+    <div class="row">
+        <div class="text">972-378-9560</div>
+        <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+
+    <div class="category">💬 Follow Up / Outreach</div>
+    <div class="row"><div class="text">Good morning, just wanted to follow up on scheduling your appointment!</div><button class="copy-btn" onclick="copyText(this)">Copy</button></div>
+    <div class="row"><div class="text">Good afternoon, just wanted to follow up on scheduling your appointment!</div><button class="copy-btn" onclick="copyText(this)">Copy</button></div>
+    <div class="row"><div class="text">Due to a lack of response, we will close this text conversation. Our office staff will attempt to contact you to schedule via phone call. Have a great day!</div><button class="copy-btn" onclick="copyText(this)">Copy</button></div>
+    <div class="row"><div class="text">We see you have been scheduled for an appointment and are closing this conversation. Have a great day!</div><button class="copy-btn" onclick="copyText(this)">Copy</button></div>
+    <div class="row"><div class="text">Attempted to schedule via text, but patient was unresponsive.</div><button class="copy-btn" onclick="copyText(this)">Copy</button></div>
+
+    <div class="category">🆔 Insurance Information Requests</div>
+    <div class="row"><div class="text">Thanks for confirming! Would you mind also providing the specific plan type (PPO, HMO, Medicaid) and your insurance subscriber ID?</div><button class="copy-btn" onclick="copyText(this)">Copy</button></div>
+    <div class="row"><div class="text">Thanks for confirming! Could you also provide your insurance subscriber ID? Once confirmed, we can then proceed with scheduling your appointment.</div><button class="copy-btn" onclick="copyText(this)">Copy</button></div>
+    <div class="row"><div class="text">Unfortunately, we'll need your subscriber ID to schedule you for an appointment. Please reach out again when you have that information!</div><button class="copy-btn" onclick="copyText(this)">Copy</button></div>
+    <div class="row">
+        <div class="text">Great! Before we find a time for your appointment, could you verify that your address is still on street address and you currently don’t have insurance?</div>
+        <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+
+    <div class="category">📅 Scheduling Responses</div>
+    <div class="row"><div class="text">Great thank you for confirming! One moment while I find the next available appointment for you...</div><button class="copy-btn" onclick="copyText(this)">Copy</button></div>
+    <div class="row"><div class="text">We have an available appointment on Day, Month Date at Time with Provider at our Blank Location. Would you like to schedule this appointment?</div><button class="copy-btn" onclick="copyText(this)">Copy</button></div>
+    <div class="row"><div class="text">Great, we have you scheduled for Day, Month Date at Time with Provider. Have a nice day!</div><button class="copy-btn" onclick="copyText(this)">Copy</button></div>
+    <div class="row">
+        <div class="text">Great, you are booked for Day, Month Date at Time with Provider at our Blank Location. Please remember if you have an HMO insurance, you will need to acquire a referral from your PCP.</div>
+        <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+    <div class="row">
+        <div class="text">To complete your patient profile, could you please provider your current Primary Care Physician and primary pharmacy?</div>
+        <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+
+    <div class="category">☎️ Redirects to Office/Billing</div>
+    <div class="row">
+        <div class="text">Please call us at 972-985-8838, and we'll connect you with someone who can help with more specific clinic details.</div>
+        <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+    <div class="row">
+        <div class="text">Please call us at 972-378-9560, and we'll connect you with someone who can help with more specific clinic details.</div>
+        <button class="copy-btn" onclick="copyText(this)">Copy</button>
     </div>
 </div>
 
-<hr>
+<script>
+    function copyText(btn) {
+        const text = btn.previousElementSibling.innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            const originalText = btn.innerText;
+            btn.innerText = "Copied!";
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.classList.remove('copied');
+            }, 1500);
+        });
+    }
+</script>
 
-<div class="section">
-    <h3>📞 PLANO WEST</h3>
-    <div class="copy-box">
-        <span>972-378-9560</span>
-        <button class="copy-btn" onclick="copyText('972-378-9560')">Copy</button>
-    </div>
-    <div class="copy-box">
-        <span>6124 West Parker Road, Building 3, Suite 536, Plano, TX 75093</span>
-        <button class="copy-btn" onclick="copyText('6124 West Parker Road, Building 3, Suite 536, Plano, TX 75093')">Copy</button>
-    </div>
-</div>
+</body>
+</html>
