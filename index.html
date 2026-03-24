@@ -3,39 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Scheduling Prompts</title>
+    <title>My Custom Prompts</title>
     <style>
-        body { font-family: sans-serif; background-color: #f4f7f6; padding: 20px; color: #333; }
-        .container { max-width: 800px; margin: auto; }
-        .category { margin-top: 25px; font-weight: bold; color: #444; border-bottom: 2px solid #ddd; padding-bottom: 5px; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background-color: #f0f2f5; padding: 20px; color: #1c1e21; }
+        .container { max-width: 700px; margin: auto; }
+        .category { margin-top: 25px; font-size: 1.1rem; font-weight: bold; color: #007bff; text-transform: uppercase; letter-spacing: 1px; }
         .row { 
             display: flex; align-items: center; justify-content: space-between;
-            background: white; padding: 12px; margin-top: 10px;
-            border-radius: 6px; border: 1px solid #e0e0e0; box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            background: white; padding: 15px; margin-top: 10px;
+            border-radius: 10px; border: 1px solid #ddd; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-        .text { flex-grow: 1; margin-right: 15px; font-size: 14px; line-height: 1.4; }
+        .text { flex-grow: 1; margin-right: 15px; font-size: 15px; line-height: 1.5; }
         .copy-btn { 
             background-color: #007bff; color: white; border: none; 
-            padding: 10px 18px; border-radius: 4px; cursor: pointer; font-weight: bold; min-width: 80px;
+            padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 600; min-width: 90px;
+            transition: background 0.2s;
         }
-        .copy-btn:active { background-color: #0056b3; }
+        .copy-btn:hover { background-color: #0056b3; }
         .copy-btn.copied { background-color: #28a745; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>My Quick Copy Tool</h1>
+    <h1>📋 My Quick Phrases</h1>
     
-    <div class="category">📍 Locations</div>
+    <div class="category">👋 Greetings</div>
     <div class="row">
-        <div class="text">Main Office: 123 Health Way, Suite 100, Chicago, IL 60601</div>
+        <div class="text">Hello! This is the office following up on your recent inquiry. How can we assist you today?</div>
         <button class="copy-btn" onclick="copyText(this)">Copy</button>
     </div>
 
-    <div class="category">💬 Outreach</div>
+    <div class="category">📅 Appointments</div>
     <div class="row">
-        <div class="text">Good morning, just wanted to follow up on scheduling your appointment!</div>
+        <div class="text">We have an opening this coming Tuesday at 10:00 AM. Does that work for your schedule?</div>
+        <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+
+    <div class="category">📝 Information Needed</div>
+    <div class="row">
+        <div class="text">To move forward, please provide a photo of the front and back of your ID card.</div>
+        <button class="copy-btn" onclick="copyText(this)">Copy</button>
+    </div>
+
+    <div class="category">🏁 Closing</div>
+    <div class="row">
+        <div class="text">Thank you for choosing us! Please let us know if you have any other questions. Have a great day!</div>
         <button class="copy-btn" onclick="copyText(this)">Copy</button>
     </div>
 </div>
